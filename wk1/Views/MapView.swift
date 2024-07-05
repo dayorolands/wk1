@@ -10,6 +10,7 @@ import MapKit
 
 struct MapView: View {
     var coordinate: CLLocationCoordinate2D
+    let defaultDelta : CLLocationDegrees = 0.2
     
     var body: some View {
         Map(position: .constant(.region(region)))
@@ -18,7 +19,7 @@ struct MapView: View {
     private var region : MKCoordinateRegion {
         MKCoordinateRegion(
             center : coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+            span: MKCoordinateSpan(latitudeDelta: defaultDelta, longitudeDelta: defaultDelta)
         )
     }
 }

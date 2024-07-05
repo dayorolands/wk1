@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct LandmarkList: View {
+    var retrievedLandmarks = landmarks
     var body: some View {
         NavigationSplitView {
-            List(landmarks) { landmark in
+            List(retrievedLandmarks) { landmark in
                 NavigationLink {
                     LandmarkDetail(landmark: landmark)
                 } label: {
@@ -25,5 +26,5 @@ struct LandmarkList: View {
 }
 
 #Preview {
-    LandmarkList()
+    LandmarkList(retrievedLandmarks : landmarks)
 }
